@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - [NGÔ MINH NHẬT]</title>
+    <style>
+        :root {
+            --primary: #6c5ce7; /* Màu tím Game/Tech */
+            --bg: #0f0f11;
+            --surface: #1a1a1e;
+            --text: #e0e0e0;
+            --text-muted: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        /* Container & Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 60px 0; border-bottom: 1px solid #333; }
+
+        /* Header */
+        header { background: var(--surface); padding: 20px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 100px 0; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 20px auto; }
+        .btn { display: inline-block; background: var(--primary); color: #fff; padding: 10px 25px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #5649c0; transform: translateY(-2px); }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .skill-card { background: var(--surface); padding: 20px; border-radius: 8px; text-align: center; }
+        .skill-card h3 { color: var(--primary); margin-bottom: 10px; }
+
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .project-card { background: var(--surface); border-radius: 8px; overflow: hidden; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .project-img { width: 100%; height: 200px; background-color: #333; display: flex; align-items: center; justify-content: center; color: #555; }
+        .project-info { padding: 20px; }
+        .tag { display: inline-block; font-size: 0.8rem; background: #333; padding: 4px 8px; border-radius: 4px; margin-right: 5px; color: var(--text-muted); }
+
+        /* Resume/Timeline */
+        .timeline-item { margin-bottom: 30px; border-left: 2px solid var(--primary); padding-left: 20px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 5px; width: 10px; height: 10px; background: var(--primary); border-radius: 50%; }
+        .timeline-date { color: var(--primary); font-size: 0.9rem; font-weight: bold; }
+        .timeline-title { font-size: 1.2rem; margin: 5px 0; }
+
+        /* Contact */
+        .contact { text-align: center; }
+        .social-links { margin-top: 20px; }
+        .social-links a { color: var(--text-muted); margin: 0 10px; text-decoration: none; font-size: 1.2rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { flex-direction: column; gap: 10px; }
+            .nav-links { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Minh Nhật.Design</div>
+                <div class="nav-links">
+                    <a href="#about">Giới Thiệu</a>
+                    <a href="#skills">Kỹ Năng</a>
+                    <a href="#portfolio">Dự Án</a>
+                    <a href="#resume">CV</a>
+                    <a href="#contact">Liên Hệ</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="about">
+        <div class="container">
+            <h1>Xin chào, mình là <span>Minh Nhật</span></h1>
+            <h2>Graphic Designer & Aspiring Game Designer</h2>
+            <p>
+                Sinh viên Quản trị Kinh doanh với 3 năm kinh nghiệm Graphic Design. 
+                Hiện đang tập trung phát triển kỹ năng 3D (Blender) và Game Dev (Godot) 
+                với mục tiêu tạo ra những trải nghiệm game độc đáo.
+            </p>
+            <a href="#portfolio" class="btn">Xem Portfolio</a>
+            <a href="#contact" class="btn" style="background: transparent; border: 1px solid var(--primary); margin-left: 10px;">Liên Hệ</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Bộ Kỹ Năng (Skillset)</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Design Tools</h3>
+                    <p>Photoshop, Illustrator</p>
+                    <small>3 năm kinh nghiệm</small>
+                </div>
+                <div class="skill-card">
+                    <h3>3D & Game Art</h3>
+                    <p>Blender, Anime Style</p>
+                    <small>Đang phát triển chuyên sâu</small>
+                </div>
+                <div class="skill-card">
+                    <h3>Game Engine</h3>
+                    <p>Godot Engine</p>
+                    <small>Lập trình GDScript cơ bản</small>
+                </div>
+                <div class="skill-card">
+                    <h3>Kiến Thức Khác</h3>
+                    <p>Business Admin, Python</p>
+                    <small>Tư duy logic & quản trị</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Dự Án Nổi Bật</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x250/2a2a2e/6c5ce7?text=Graphic+Design+Project" alt="Project 1" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Branding</span> <span class="tag">2D Art</span>
+                        <h3>Freelance Graphic Design</h3>
+                        <p>Các dự án thiết kế nhận diện thương hiệu và ấn phẩm truyền thông đã thực hiện trong 3 năm qua.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x250/2a2a2e/6c5ce7?text=3D+Blender+Model" alt="Project 2" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Blender</span> <span class="tag">3D Modeling</span>
+                        <h3>3D Learning Journey</h3>
+                        <p>Các bài tập dựng hình 3D từ cơ bản đến nâng cao, tập trung vào phong cách Anime/Stylized.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x250/2a2a2e/6c5ce7?text=Game+Mechanic+Demo" alt="Project 3" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Godot</span> <span class="tag">Python</span>
+                        <h3>Game Mechanics & Logic</h3>
+                        <p>Các demo nhỏ về cơ chế game RPG 2D và thuật toán mô phỏng (ví dụ: Vietlott Sim).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Kinh Nghiệm & Học Vấn</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - Hiện tại</div>
+                <h3 class="timeline-title">Freelance Graphic Designer</h3>
+                <p>Thiết kế logo, bộ nhận diện thương hiệu và ấn phẩm marketing cho nhiều khách hàng. Phát triển tư duy thẩm mỹ và sử dụng thành thạo Adobe Suite.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Hiện tại</div>
+                <h3 class="timeline-title">Sinh viên Quản trị Kinh doanh</h3>
+                <p>Đại học [Tên Trường Của Bạn]. Kết hợp tư duy kinh doanh vào quy trình thiết kế và phát triển sản phẩm.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <h3 class="timeline-title">Tự học Game Design & 3D Art</h3>
+                <p>Nghiên cứu Godot Engine, Blender và vẽ tay để chuẩn bị cho vị trí Game Designer Trainee.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="border-bottom: none;">
+        <div class="container contact">
+            <h2>Liên Hệ</h2>
+            <p>Sẵn sàng cho cơ hội Game Designer Trainee và các dự án Freelance.</p>
+            <br>
+            <a href="mailto:emailcuaban@gmail.com" class="btn">Gửi Email Cho Tôi</a>
+            
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+                <a href="#">ArtStation</a>
+                <a href="#">GitHub</a>
+            </div>
+            <p style="margin-top: 50px; font-size: 0.8rem; color: #555;">© 2026 Minh Nhật Portfolio</p>
+        </div>
+    </section>
+
+</body>
+</html>
